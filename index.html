@@ -127,6 +127,32 @@ footer{background:#050e20;color:#dfe4ef;text-align:center;padding:28px 20px;font
 <script>
 function sendOrder(e){
   e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const service = document.getElementById('service').value;
+  const details = document.getElementById('details').value.trim();
+
+  const message =
+`Hello WinnerMastersOutFit 👋
+
+I would like to place an order.
+
+Name: ${name}
+Phone: ${phone}
+Service: ${service}
+
+My preferred style/details:
+${details || 'I would like to see the available designs and options.'}
+
+Please send me the price and further ordering details. Thank you.`;
+
+  window.open(
+    'https://wa.me/2348142076859?text=' + encodeURIComponent(message),
+    '_blank'
+  );
+}
+  e.preventDefault();
   const name=document.getElementById('name').value.trim();
   const phone=document.getElementById('phone').value.trim();
   const service=document.getElementById('service').value;
